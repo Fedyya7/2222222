@@ -69,6 +69,49 @@ export const resourceBuildings: Building[] = [
 ];
 
 /**
+ * [新增] 特殊建筑列表
+ */
+export const specialBuildings: Building[] = [
+  {
+    id: 'brothel',
+    name: '红灯区',
+    icon: '💋',
+    description: '派遣俘虏接客，不仅能产出金币，还能...嘿嘿嘿',
+    cost: { gold: 500, food: 200 },
+    category: 'special',
+    effects: [
+      { type: 'special_work', icon: '💰', description: '工作赚取金币' },
+      { type: 'interact', icon: '💬', description: '进店点钟互动' }
+    ]
+  },
+  {
+    id: 'torture_chamber',
+    name: '刑讯室',
+    icon: '⛓️',
+    description: '专业的调教设施，可以加速俘虏的堕落过程',
+    cost: { gold: 400, food: 100 },
+    category: 'special',
+    effects: [
+      { type: 'special_work', icon: '⚡', description: '加速堕落' },
+      { type: 'interact', icon: '😈', description: '亲自进行刑讯' }
+    ]
+  },
+  {
+    id: 'monster_spa',
+    name: '魔物温泉',
+    icon: '♨️',
+    description: '混合了奇怪体液的温泉，可以快速恢复体力',
+    cost: { gold: 800, food: 400 },
+    category: 'special',
+    effects: [
+      { type: 'special_work', icon: '❤️', description: '恢复体力' },
+      { type: 'interact', icon: '💧', description: '混浴' }
+    ]
+  }
+];
+
+
+/**
  * 全局建筑列表
  */
 export const globalBuildings: Building[] = [
