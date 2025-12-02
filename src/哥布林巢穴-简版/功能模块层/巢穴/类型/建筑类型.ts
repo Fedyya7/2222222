@@ -1,3 +1,7 @@
+{
+type: uploaded file
+fileName: kitakamic/goblingame/GoblinGame-97009b710d98a21075ed1d3a87f447b8244f8900/src/哥布林巢穴-简版/功能模块层/巢穴/类型/建筑类型.ts
+fullContent:
 /**
  * 建筑效果接口
  */
@@ -42,7 +46,8 @@ export interface Building {
   icon: string;
   description: string;
   cost: BuildingCost;
-  category: 'breeding' | 'resource' | 'global';
+  // 新增 special 类型
+  category: 'breeding' | 'resource' | 'global' | 'special';
   income?: BuildingIncome; // 每回合收入
   effects: BuildingEffect[];
   /** 解锁条件（仅全局建筑使用） */
@@ -57,12 +62,15 @@ export interface Building {
 export interface BuildingSlot {
   building: Building | null;
   unlocked: boolean;
+  /** 分配到该槽位的人物的ID */
+  assignedCharacterId?: string | null;
 }
 
 /**
  * 槽位类型
  */
-export type SlotType = 'breeding' | 'resource' | 'global';
+// 新增 special 类型
+export type SlotType = 'breeding' | 'resource' | 'global' | 'special';
 
 /**
  * 槽位成本接口
@@ -70,4 +78,5 @@ export type SlotType = 'breeding' | 'resource' | 'global';
 export interface SlotCost {
   gold: number;
   food: number;
+}
 }
